@@ -1,1 +1,0 @@
-du . 2>/dev/null | sed s/[0-9]*// | whileloop |  sed s/..............................// | sort -n

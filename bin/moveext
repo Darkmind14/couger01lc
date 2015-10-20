@@ -1,5 +1,0 @@
-#!/bin/csh
-
-foreach file (*.$1)
-  if (-f $file) then
-   
