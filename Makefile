@@ -4,7 +4,7 @@ everyother: everymain.o everyother.o
 everymain.o: everymain.c everyother.h
 	cc -c everymain.c
 
-everyoth.o: everyother.c everyother.h
+everyother.o: everyother.c everyother.h
 	cc -c everyother.c
 
 clean:
