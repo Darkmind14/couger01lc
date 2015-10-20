@@ -1,0 +1,29 @@
+#!/bin/bash
+echo "<!DOCTYPE html>" > index.html
+echo "<html>" >> index.html
+echo "<body>" >> index.html
+echo "<table>" >> index.html
+count=0
+for f in *.jpg
+do
+  if [ -f "thumb_$f" ]
+  then
+    rm thumb_$f
+  fi
+done
+for f in *.jpg
+do
+  if [ $count -eq 0 ]
+  then
+    echo "<tr>" >> index.html
+  fi
+  sips -Z 320 $f --out thumb_$f
+  echo '<td><a href="'$f'"><img src="thumb_'$f'" alt="'$f'"></a></td>' >> index.html
+    count=$(($count+1))
+  if [ $count -eq 3 ]
+  then
+    echo "</tr>" >> index.html
+    count=0
+  fi
+done
+echo "</table>" >> index.html
