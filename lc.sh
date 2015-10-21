@@ -1,7 +1,7 @@
 #!usr/bin/bash
 lc ()
 { # function call for cScripts functions
-  c_lower_case $1 $2
+  c_lowercase $1 
  
 }
 
